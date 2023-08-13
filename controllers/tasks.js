@@ -49,7 +49,7 @@ const updateTask = async (req,res)=>{
         const {id:taskID} = req.params
         const task = await Task.findOneAndUpdate({_id:taskID}, req.body, {new:true, runValidators:true})
         if(!task){
-            return res.status(404).json({msg:`Something went wrong`})
+            return res.status(404).json({msg:`No task with ID: ${taskID}`})
         }
         res.status(200).json({task})
     } catch (error) {

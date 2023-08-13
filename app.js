@@ -6,7 +6,7 @@ require('dotenv').config();
 
 app.use(express.static('./public'));
 app.use(express.json());
-app.use('',tasks);
+app.use('/api/v1/tasks',tasks);
 
 const port = 3000;
 
